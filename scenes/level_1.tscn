@@ -1,6 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfpgf8w4mcc1"]
+[gd_scene load_steps=11 format=3 uid="uid://dfpgf8w4mcc1"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_lwujj"]
+[ext_resource type="AudioStream" uid="uid://dvhcyr1hiyo2u" path="res://sounds/sfx/jump.wav" id="2_5wfro"]
+[ext_resource type="AudioStream" uid="uid://bhbwdy2abk381" path="res://sounds/music/maobgm.wav" id="2_m7u7d"]
+[ext_resource type="AudioStream" uid="uid://b1kjyv5gjfg2q" path="res://sounds/sfx/step.wav" id="3_fge5v"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7traw"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -51,6 +54,15 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 
 [node name="Camera3D" type="Camera3D" parent="Player/Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.550635, 0)
 
+[node name="jumpsound" type="AudioStreamPlayer3D" parent="Player"]
+stream = ExtResource("2_5wfro")
+
+[node name="stepsound" type="AudioStreamPlayer3D" parent="Player"]
+stream = ExtResource("3_fge5v")
+
+[node name="RayCast3D" type="RayCast3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.09993, 0.0515833, -0.207587)
 material_override = SubResource("StandardMaterial3D_obs6r")
@@ -82,43 +94,43 @@ use_collision = true
 size = Vector3(3, 0.5, 3)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.24251, 6.72124, 8.89635)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.24251, 6.72124, 8.36532)
 material_override = SubResource("StandardMaterial3D_obs6r")
 use_collision = true
 size = Vector3(3, 0.5, 3)
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.54817, 7.9572, 9.97727)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.13998, 7.9572, 9.97727)
 material_override = SubResource("StandardMaterial3D_obs6r")
 use_collision = true
 size = Vector3(3, 0.5, 3)
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.17523, 9.23719, 1.57997)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.17523, 9.23719, 2.1399)
 material_override = SubResource("StandardMaterial3D_obs6r")
 use_collision = true
 size = Vector3(3, 0.5, 3)
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22182, 10.6133, -5.0049)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.63083, 10.6133, -4.6791)
 material_override = SubResource("StandardMaterial3D_obs6r")
 use_collision = true
 size = Vector3(3, 0.5, 3)
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.62328, 11.7688, -9.10862)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.79355, 11.7688, -9.10862)
 material_override = SubResource("StandardMaterial3D_obs6r")
 use_collision = true
 size = Vector3(3, 0.5, 3)
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.43977, 13.2107, -1.53735)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.43977, 13.2107, -2.40963)
 material_override = SubResource("StandardMaterial3D_obs6r")
 use_collision = true
 size = Vector3(3, 0.5, 3)
 
 [node name="CSGBox3D13" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5159, 14.1215, 7.75563)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5159, 14.1215, 6.10454)
 material_override = SubResource("StandardMaterial3D_obs6r")
 use_collision = true
 size = Vector3(3, 0.5, 3)
@@ -206,3 +218,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21384, 1.80396, 1.23433)
 material_override = SubResource("StandardMaterial3D_obs6r")
 use_collision = true
 size = Vector3(0.5, 4, 0.5)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_m7u7d")
+autoplay = true
